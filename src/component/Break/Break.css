@@ -1,0 +1,10 @@
+
+.break-items button{
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.break-items button:hover{
+    background-color: rgb(255, 193, 7);
+}
