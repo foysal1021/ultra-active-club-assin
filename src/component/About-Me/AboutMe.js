@@ -1,5 +1,6 @@
 import React from 'react';
 import Break from '../Break/Break';
+import ExerciseDetails from '../Exercise-Details/ExerciseDetails';
 import './AboutMe.css';
 
 const AboutMe = () => {
@@ -36,9 +37,9 @@ const AboutMe = () => {
             <Break></Break>
             {/* this is Break component end */}
 
-
-
-
+            {/* this is Exercise-Details start */}
+            <ExerciseDetails></ExerciseDetails>
+            {/* this is Exercise-Details end */}
         </div>
     );
 };
