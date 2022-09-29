@@ -13,6 +13,11 @@ const PhysicallyActivity = () => {
         .then( data => setExercises(data))
     },[]);
 
+    console.log(exercises)
+
+
+
+
     return (
         <div className=' row '>
 
