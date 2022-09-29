@@ -1,10 +1,12 @@
+// this is PhysicallyActivity compoent
 import React, { useEffect, useState } from 'react';
+import AboutMe from '../About-Me/AboutMe';
 import Exercise from '../Exercise/Exercise';
 import './PhysicallyActivity.css';
 
 const PhysicallyActivity = () => {
     const [exercises,setExercises ]=useState([]);
-
+// data load form exercise.json
     useEffect(()=>{
         fetch('exercise.json')
         .then(res => res.json())
@@ -28,8 +30,8 @@ const PhysicallyActivity = () => {
                 </div> 
             </div>
 
-            <div className='col-12 col-lg-3 bg-dark'>
-                 hello wrold
+            <div className='col-12 col-lg-3'>
+                 <AboutMe></AboutMe>
             </div>
         </div>
     );
