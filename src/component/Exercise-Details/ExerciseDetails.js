@@ -16,7 +16,7 @@ const ExerciseDetails = () => {
                 <p> <span>200</span> seconds </p>
             </div>
 
-            <button> Activity Completed </button>
+            <button className='w-100 mt-3 Activity-Btn rounded bg-info'> <strong> Activity Completed</strong> </button>
 
 
         </div>
