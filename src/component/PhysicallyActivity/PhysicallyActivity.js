@@ -14,7 +14,7 @@ const PhysicallyActivity = () => {
     return (
         <div className=' row '>
 
-            <div  className='col-12  '>
+            <div  className='col-12  col-lg-9'>
                 <div className='m-5'>
                     <h3 className='text-start'> FA-exercises-Club </h3>
                     <h4 className='text-start'>Select your today’s exercise </h4>
@@ -28,7 +28,7 @@ const PhysicallyActivity = () => {
                 </div> 
             </div>
 
-            <div className='col-12 bg-dark'>
+            <div className='col-12 col-lg-3 bg-dark'>
                  hello wrold
             </div>
         </div>
