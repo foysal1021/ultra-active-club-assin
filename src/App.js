@@ -1,11 +1,11 @@
 
 import './App.css';
+import PhysicallyActivity from './component/PhysicallyActivity/PhysicallyActivity';
 
 function App() {
   return (
     <div className="App">
-      <h1> hello </h1>
-      <h1> hello agains</h1>
+      <PhysicallyActivity></PhysicallyActivity>
     </div>
   );
 }
