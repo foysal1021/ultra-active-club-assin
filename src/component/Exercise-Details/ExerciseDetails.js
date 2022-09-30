@@ -9,11 +9,10 @@ const ExerciseDetails = (props) => {
         const creantTime =  +time.time;
         getTime = getTime + creantTime;
     }
-    const activity = ()=>{
-        alert('');
-    }
 
-    const notify =()=> toast("write your message here!!!")
+
+
+    const notify =()=> toast("this is a toastify")
     return (
         <div className='my-3'>
             <p> <strong className='fs-5'>Exercise Details</strong> </p>
