@@ -20,7 +20,7 @@ const ExerciseDetails = (props) => {
 
             <div className='Exercise-info d-flex justify-content-between p-3 rounded mt-3'>
                 <p> <strong>Break time</strong> </p>
-                <p> <span>200</span> seconds </p>
+                <p> <span> {props.breakValue} </span> seconds </p>
             </div>
 
             <button className='w-100 mt-3 Activity-Btn rounded bg-info'> <strong> Activity Completed</strong> </button>

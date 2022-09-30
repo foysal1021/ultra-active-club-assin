@@ -8,21 +8,36 @@ import './PhysicallyActivity.css';
 
 const PhysicallyActivity = () => {
     const [exercises,setExercises ]=useState([]);
-    const [add,setAdd] = useState([]);
+    const [add,setAdd] = useState([]); //for Add to List
+    const [getBreak,setBreak] = useState([]); // for break 
+    //     const [getBreak,setBreak] = useState([]);
+
+
+
+    
+
 // data load form exercise.json
     useEffect(()=>{
         fetch('exercise.json')
         .then(res => res.json())
         .then( data => setExercises(data))
     },[]);
-
+// for add to list btn 
     const addList = (id)=>{
         const newAdd = [...add,id];
         setAdd(newAdd);
     }
+// for Break btn
+    const BreakBtnTime = (BreakValue)=>{
+        console.log(BreakValue);
+        const newBreak = [getBreak,BreakValue];
+        setBreak(newBreak);
+    }
 
-
-
+    let BreakValue = 0;
+    for(const Brak of getBreak){
+        BreakValue = Brak;
+    }
 
 
 
@@ -44,7 +59,7 @@ const PhysicallyActivity = () => {
             </div>
 
             <div className='col-12 col-lg-3'>
-                 <AboutMe add={add}></AboutMe>
+                 <AboutMe  BreakValue={BreakValue} brakeTime ={BreakBtnTime} add={add}></AboutMe>
             </div>
         </div>
     );
