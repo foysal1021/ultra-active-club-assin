@@ -7,9 +7,7 @@ const Exercise = (props) => {
     const {img,about,age,time,title} = props.exercise;
     const aboutSlice = about.slice(0,100);
 
-    const addBtnCLick = ()=>{
-        console.log('hello')
-    }
+
 
     return (
         <div className='col-12 col-lg-4 exercise-info mt-5'>
@@ -23,7 +21,7 @@ const Exercise = (props) => {
             <p className='m-0'> <strong>for age :</strong>  {age} </p>
             <p className='m-0'> <strong> Time required : </strong> {time}s </p>
 
-            <button onClick={ addBtnCLick }> Add to List</button>
+            <button onClick={ ()=> props.click(props.exercise)}> Add to List</button>
             </div>
             
             </div>

@@ -8,6 +8,7 @@ import './PhysicallyActivity.css';
 
 const PhysicallyActivity = () => {
     const [exercises,setExercises ]=useState([]);
+    const [add,setAdd] = useState([]);
 // data load form exercise.json
     useEffect(()=>{
         fetch('exercise.json')
@@ -15,7 +16,12 @@ const PhysicallyActivity = () => {
         .then( data => setExercises(data))
     },[]);
 
-    console.log(exercises)
+    const addList = (id)=>{
+        const newAdd = [...add,id];
+        setAdd(newAdd);
+    }
+
+
 
 
 
@@ -30,7 +36,7 @@ const PhysicallyActivity = () => {
 
                     <div className='row'>
                     {
-                        exercises.map( exercise => <Exercise exercise={exercise}></Exercise> )
+                        exercises.map( exercise => <Exercise click={addList} exercise={exercise}></Exercise> )
                     }
                     </div>
 
@@ -38,7 +44,7 @@ const PhysicallyActivity = () => {
             </div>
 
             <div className='col-12 col-lg-3'>
-                 <AboutMe></AboutMe>
+                 <AboutMe add={add}></AboutMe>
             </div>
         </div>
     );

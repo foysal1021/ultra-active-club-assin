@@ -3,7 +3,8 @@ import Break from '../Break/Break';
 import ExerciseDetails from '../Exercise-Details/ExerciseDetails';
 import './AboutMe.css';
 
-const AboutMe = () => {
+const AboutMe = (props) => {
+    const add = props.add;
     return (
         <div className='p-3 bg-warning'>
             {/* this is about section start */}
@@ -38,7 +39,7 @@ const AboutMe = () => {
             {/* this is Break component end */}
 
             {/* this is Exercise-Details start */}
-            <ExerciseDetails></ExerciseDetails>
+            <ExerciseDetails add={add}></ExerciseDetails>
             {/* this is Exercise-Details end */}
         </div>
     );

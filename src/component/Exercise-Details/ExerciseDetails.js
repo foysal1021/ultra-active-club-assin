@@ -1,14 +1,21 @@
 import React from 'react';
 import './ExerciseDetails.css';
 
-const ExerciseDetails = () => {
+const ExerciseDetails = (props) => {
+    let getTime = 0;
+    for(const time of props.add){
+        const creantTime =  +time.time;
+        getTime = getTime + creantTime;
+    }
+    // console.log(getTime)
+
     return (
         <div className='my-3'>
             <p> <strong className='fs-5'>Exercise Details</strong> </p>
 
             <div className='Exercise-info d-flex justify-content-between p-3 rounded'>
                 <p> <strong>Exercise time</strong> </p>
-                <p> <span>200</span> seconds </p>
+                <p> <span>{getTime}</span> seconds </p>
             </div>
 
             <div className='Exercise-info d-flex justify-content-between p-3 rounded mt-3'>
