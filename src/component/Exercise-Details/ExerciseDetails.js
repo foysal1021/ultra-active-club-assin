@@ -1,5 +1,7 @@
 import React from 'react';
 import './ExerciseDetails.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ExerciseDetails = (props) => {
     let getTime = 0;
@@ -7,8 +9,11 @@ const ExerciseDetails = (props) => {
         const creantTime =  +time.time;
         getTime = getTime + creantTime;
     }
-    // console.log(getTime)
+    const activity = ()=>{
+        alert('');
+    }
 
+    const notify =()=> toast("write your message here!!!")
     return (
         <div className='my-3'>
             <p> <strong className='fs-5'>Exercise Details</strong> </p>
@@ -23,7 +28,10 @@ const ExerciseDetails = (props) => {
                 <p> <span> {props.breakValue} </span> seconds </p>
             </div>
 
-            <button className='w-100 mt-3 Activity-Btn rounded bg-info'> <strong> Activity Completed</strong> </button>
+            <button onClick={notify} className='w-100 mt-3 Activity-Btn rounded bg-info'>
+                 <strong> Activity Completed</strong> 
+            </button>
+            <ToastContainer/>
 
 
         </div>
