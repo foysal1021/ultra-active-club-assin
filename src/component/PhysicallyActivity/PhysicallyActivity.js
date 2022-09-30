@@ -5,16 +5,13 @@ import React, { useEffect, useState } from 'react';
 import AboutMe from '../About-Me/AboutMe';
 import Exercise from '../Exercise/Exercise';
 import './PhysicallyActivity.css';
+import { localBreak } from '../Utilits/Utilits';
 
 const PhysicallyActivity = () => {
     const [exercises,setExercises ]=useState([]);
     const [add,setAdd] = useState([]); //for Add to List
     const [getBreak,setBreak] = useState([]); // for break 
-    //     const [getBreak,setBreak] = useState([]);
 
-
-
-    
 
 // data load form exercise.json
     useEffect(()=>{
@@ -22,23 +19,29 @@ const PhysicallyActivity = () => {
         .then(res => res.json())
         .then( data => setExercises(data))
     },[]);
-// for add to list btn 
-    const addList = (id)=>{
-        const newAdd = [...add,id];
+
+
+// for add to list btn start
+    const addList = (exercisesInfo)=>{
+        console.log(exercisesInfo);
+        const newAdd = [...add,exercisesInfo];
         setAdd(newAdd);
     }
-// for Break btn
+// for add to list btn end
+
+
+// for Break btn start
     const BreakBtnTime = (BreakValue)=>{
-        console.log(BreakValue);
         const newBreak = [getBreak,BreakValue];
         setBreak(newBreak);
+        localBreak(BreakValue);
     }
 
     let BreakValue = 0;
     for(const Brak of getBreak){
         BreakValue = Brak;
     }
-
+// for Break btn end
 
 
     return (
