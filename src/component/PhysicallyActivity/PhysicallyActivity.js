@@ -12,18 +12,18 @@ const PhysicallyActivity = () => {
     const [add,setAdd] = useState([]); //for Add to List
     const [getBreak,setBreak] = useState([]); // for break 
 
+    const [getData,setData] = useState(0);
 
 // data load form exercise.json
     useEffect(()=>{
         fetch('exercise.json')
         .then(res => res.json())
-        .then( data => setExercises(data))
+        .then( data => setExercises(data));
     },[]);
 
 
 // for add to list btn start
     const addList = (exercisesInfo)=>{
-        console.log(exercisesInfo);
         const newAdd = [...add,exercisesInfo];
         setAdd(newAdd);
     }
@@ -35,6 +35,11 @@ const PhysicallyActivity = () => {
         const newBreak = [getBreak,BreakValue];
         setBreak(newBreak);
         localBreak(BreakValue);
+        const getData = localStorage.getItem('break');
+        // console.log(getData)
+        console.log(BreakValue);
+        const newDta = getData.BreakValue;
+        setData(newDta);
     }
 
     let BreakValue = 0;
@@ -43,10 +48,9 @@ const PhysicallyActivity = () => {
     }
 // for Break btn end
 
-
+console.log(getData)
     return (
         <div className=' row '>
-
             <div  className='col-12  col-lg-9'>
                 <div className='m-5'>
                     <h3 className='text-start'> <FontAwesomeIcon icon={faPieChart}></FontAwesomeIcon>  FA-exercises-Club </h3>
