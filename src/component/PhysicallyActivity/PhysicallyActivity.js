@@ -18,7 +18,7 @@ const PhysicallyActivity = () => {
     useEffect(()=>{
         fetch('exercise.json')
         .then(res => res.json())
-        .then( data => setExercises(data));
+        .then( data => setExercises(data))
     },[]);
 
 
